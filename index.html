@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PandaType</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+
+<body class="bg-[#323437] text-white min-h-screen">
+
+
+<!-- =========================
+     HEADER / NAVBAR
+========================= -->
+
+<header class="w-full">
+
+    <nav class="w-full px-36 pt-10 pb-6 flex items-start justify-between">
+
+        <!-- PandaType -->
+        <a
+            href="/"
+            class="flex items-center gap-5 text-gray-300 hover:text-white transition"
+        >
+
+            <div class="text-4xl">
+                🐼
+            </div>
+
+            <span class="text-4xl font-medium tracking-tight">
+                pandatype
+            </span>
+
+        </a>
+
+            <!-- Time -->
+           <div class="flex items-center gap-5
+            bg-[#2c2e31] rounded-md
+            px-4 py-2 text-sm">
+
+            <button
+                class="time-option text-yellow-400 transition"
+                data-time="15"
+            >
+                15
+            </button>
+
+            <button
+                class="time-option text-gray-500 hover:text-gray-300 transition"
+                data-time="30"
+            >
+                30
+            </button>
+
+            <button
+                class="time-option text-gray-500 hover:text-gray-300 transition"
+                data-time="60"
+            >
+                60
+            </button>
+
+            <button
+                class="time-option text-gray-500 hover:text-gray-300 transition"
+                data-time="120"
+            >
+                120
+            </button>
+
+        </div>
+    </div>
+
+</nav>
+
+</header>
+
+
+
+        <!-- =========================
+            TYPING AREA
+        ========================= -->
+
+        <main class="w-full mt-28">
+
+            <div class="max-w-6xl mx-auto px-6 pt-8 justify-center">
+
+
+        <!-- Language -->
+
+        <div class="flex items-center justify-center gap-1
+                    text-lg text-gray-500 mb-7">
+
+            <i
+                data-lucide="globe"
+                class="w-4 h-4"
+            ></i>
+
+            <span>english</span>
+
+        </div>
+
+
+        <!-- typing-area -->
+
+        <div
+            id="typing-area"
+            tabindex="0"
+            class="relative cursor-text text-4xl leading-relaxed
+                text-gray-500 tracking-wide outline-none"
+        >
+
+            <!-- Timer -->
+            <div
+                id="timer"
+                class="absolute -top-8 left-0
+                    text-sm text-yellow-400"
+            >
+                15
+            </div>
+
+              <!-- Paragraph -->
+            <div
+                id="typing-text"
+                class="text-5xl"
+            >
+                The quick brown fox jumps over the lazy dog and then runs
+                across the field while the sun shines brightly in the sky.
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+        <!-- Result Screen -->
+
+<div
+    id="result-screen"
+    class="hidden mt-16 flex justify-center"
+>
+
+    <div class="flex items-center gap-12 text-center">
+
+        <!-- WPM -->
+        <div>
+            <div
+                id="result-wpm"
+                class="text-4xl text-yellow-400"
+            >
+                0
+            </div>
+
+            <div class="mt-2 text-sm text-gray-500">
+                WPM
+            </div>
+        </div>
+
+
+        <!-- Accuracy -->
+        <div>
+            <div
+                id="result-accuracy"
+                class="text-4xl text-yellow-400"
+            >
+                0%
+            </div>
+
+            <div class="mt-2 text-sm text-gray-500">
+                accuracy
+            </div>
+        </div>
+
+
+        <!-- Errors -->
+        <div>
+            <div
+                id="result-errors"
+                class="text-4xl text-red-400"
+            >
+                0
+            </div>
+
+            <div class="mt-2 text-sm text-gray-500">
+                errors
+            </div>
+        </div>
+
+
+        <!-- Time -->
+        <div>
+            <div
+                id="result-time"
+                class="text-4xl text-yellow-400"
+            >
+                15s
+            </div>
+
+            <div class="mt-2 text-sm text-gray-500">
+                time
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+        <!-- Restart Test -->
+
+        <div class="flex justify-center mt-10">
+
+            <button
+                id="restart-button"
+                type="button"
+                class="text-gray-500 hover:text-gray-300 transition"
+                title="Restart Test"
+                aria-label="Restart Test"
+            >
+                <i
+                    data-lucide="rotate-ccw"
+                    class="w-6 h-6"
+                ></i>
+            </button>
+
+        </div>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="fixed bottom-0 left-0 w-full bg-[#323437]">
+
+
+    <!-- Shortcut Rows -->
+
+    <div
+        class="flex flex-col items-center justify-center
+               gap-3 py-4 text-xs text-gray-400"
+    >
+
+        <!-- Row 1 -->
+
+        <div class="flex items-center gap-4">
+
+            <span>
+                Tab &gt; Enter
+            </span>
+
+            <span class="flex items-center gap-1.5">
+
+                <span>
+                    -
+                </span>
+
+                <span>
+                    restart test
+                </span>
+
+            </span>
+
+        </div>
+
+
+        <!-- Row 2 -->
+
+        <div class="flex items-center gap-4">
+
+            <span>
+                Escape
+            </span>
+
+            <span>
+                or
+            </span>
+
+            <span>
+                Ctrl + Shift + P
+            </span>
+
+            <span>
+                - command line
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Bottom Navigation -->
+
+    <div
+        class="flex items-center justify-between
+               border-t border-gray-700
+               px-6 py-4
+               text-xs text-gray-400"
+    >
+
+
+        <!-- Left Links -->
+
+        <div class="flex items-center gap-5">
+
+            <a
+                href="#"
+                class="hover:text-gray-300 transition"
+            >
+                Contact
+            </a>
+
+            <a
+                href="#"
+                class="hover:text-gray-300 transition"
+            >
+                Support
+            </a>
+
+            <a
+                href="#"
+                class="hover:text-gray-300 transition"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="#"
+                class="hover:text-gray-300 transition"
+            >
+                Discord
+            </a>
+
+            <a
+                href="#"
+                class="hover:text-gray-300 transition"
+            >
+                Twitter
+            </a>
+
+            <a
+                href="#"
+                class="hover:text-gray-300 transition"
+            >
+                Terms
+            </a>
+
+            <a
+                href="#"
+                class="hover:text-gray-300 transition"
+            >
+                Security
+            </a>
+
+            <a
+                href="#"
+                class="hover:text-gray-300 transition"
+            >
+                Privacy
+            </a>
+
+        </div>
+
+
+
+        <!-- Right -->
+
+        <div class="flex items-center gap-4">
+
+            <button
+                id="themeButton"
+                class="group relative cursor-pointer
+                       hover:text-gray-300 transition"
+            >
+
+                Serika Dark
+
+
+                <!-- Tooltip -->
+
+                <span
+                    class="pointer-events-none
+                           absolute bottom-full left-1/2 mb-2
+                           hidden -translate-x-1/2
+                           whitespace-nowrap
+                           rounded-md
+                           bg-gray-800
+                           px-3 py-1.5
+                           text-[11px] text-white
+                           shadow-lg
+                           group-hover:block"
+                >
+                    Shift-click to toggle custom theme
+                </span>
+
+            </button>
+
+
+            <span>
+                v26.32.0
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <!--- ========================================
+          Javascript
+          ======================================== -->
+
+<script>
+
+    lucide.createIcons();
+
+
+    // ========================================
+    // PARAGRAPHS
+    // ========================================
+
+    const paragraphs = [
+
+        "The quick brown fox jumps over the lazy dog and then runs across the field while the sun shines brightly in the sky.",
+
+        "Learning to type faster takes practice, patience, and consistency. Every mistake is a chance to improve your accuracy and speed.",
+
+        "Technology has changed the way people communicate, work, and learn. Good typing skills can make everyday tasks much easier.",
+
+        "A calm mind and steady rhythm can help you type more accurately. Focus on each character instead of trying to type too quickly.",
+
+        "Practice every day and your typing speed will gradually improve. Accuracy should always come before speed when learning to type."
+
+    ];
+
+
+    // ========================================
+    // ELEMENTS
+    // ========================================
+
+    const typingArea =
+        document.getElementById("typing-area");
+
+    const typingText =
+        document.getElementById("typing-text");
+
+    const timerElement =
+        document.getElementById("timer");
+
+    const restartButton =
+        document.getElementById("restart-button");
+
+    const timeOptions =
+        document.querySelectorAll(".time-option");
+
+
+    // ========================================
+    // VARIABLES
+    // ========================================
+
+    let selectedTime = 15;
+
+    let timeLeft = selectedTime;
+
+    let timer = null;
+
+    let currentParagraph = "";
+
+    let currentIndex = 0;
+
+    let testStarted = false;
+
+    let testFinished = false;
+
+    let correctCharacters = 0;
+
+    let wrongCharacters = 0;
+
+
+    // ========================================
+    // RANDOM PARAGRAPH
+    // ========================================
+
+    function getRandomParagraph() {
+
+        const randomIndex =
+            Math.floor(
+                Math.random() * paragraphs.length
+            );
+
+        return paragraphs[randomIndex];
+
+    }
+
+
+    // ========================================
+    // LOAD NEW TEST
+    // ========================================
+
+    function loadNewParagraph() {
+
+        clearInterval(timer);
+
+
+        // Reset test
+        currentParagraph = getRandomParagraph();
+
+        currentIndex = 0;
+
+        correctCharacters = 0;
+
+        wrongCharacters = 0;
+
+        timeLeft = selectedTime;
+
+        testStarted = false;
+
+        testFinished = false;
+
+
+        // Reset timer
+        timerElement.textContent = timeLeft;
+
+
+        // Hide result
+        const resultScreen =
+            document.getElementById("result-screen");
+
+        if (resultScreen) {
+
+            resultScreen.classList.add("hidden");
+
+        }
+
+
+        // Clear paragraph
+        typingText.innerHTML = "";
+
+
+        // Create character spans
+        currentParagraph
+            .split("")
+            .forEach((character) => {
+
+                const span =
+                    document.createElement("span");
+
+                span.textContent = character;
+
+                span.classList.add(
+                    "text-gray-500"
+                );
+
+                typingText.appendChild(span);
+
+            });
+
+
+        typingArea.focus();
+
+    }
+
+
+    // ========================================
+    // TIME SELECTION
+    // ========================================
+
+    timeOptions.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            selectedTime =
+                Number(button.dataset.time);
+
+
+            // Reset all buttons
+            timeOptions.forEach((item) => {
+
+                item.classList.remove(
+                    "text-yellow-400"
+                );
+
+                item.classList.add(
+                    "text-gray-500"
+                );
+
+            });
+
+
+            // Selected button
+            button.classList.remove(
+                "text-gray-500"
+            );
+
+            button.classList.add(
+                "text-yellow-400"
+            );
+
+
+            // Start fresh test
+            loadNewParagraph();
+
+        });
+
+    });
+
+
+    // ========================================
+    // START TIMER
+    // ========================================
+
+    function startTimer() {
+
+        if (testStarted) {
+            return;
+        }
+
+
+        testStarted = true;
+
+
+        timer =
+            setInterval(() => {
+
+                timeLeft--;
+
+                timerElement.textContent =
+                    timeLeft;
+
+
+                if (timeLeft <= 0) {
+
+                    clearInterval(timer);
+
+                    finishTest();
+
+                }
+
+            }, 1000);
+
+    }
+
+
+    // ========================================
+    // FINISH TEST
+    // ========================================
+
+    function finishTest() {
+
+        testFinished = true;
+
+        clearInterval(timer);
+
+        typingArea.blur();
+
+
+        // ------------------------------------
+        // ACCURACY
+        // ------------------------------------
+
+        const totalTyped =
+            correctCharacters +
+            wrongCharacters;
+
+
+        let accuracy = 0;
+
+
+        if (totalTyped > 0) {
+
+            accuracy =
+                Math.round(
+                    (correctCharacters /
+                        totalTyped) * 100
+                );
+
+        }
+
+
+            // ------------------------------------
+            // WPM
+            // ------------------------------------
+
+        const elapsedTime =
+            selectedTime - timeLeft;
+
+        const elapsedMinutes =
+            elapsedTime / 60;
+
+        const wpm =
+            elapsedMinutes > 0
+                ? Math.round(
+                    (correctCharacters / 5) /
+                    elapsedMinutes
+                )
+                : 0;
+
+        // ------------------------------------
+        // RESULT ELEMENTS
+        // ------------------------------------
+
+        const resultWpm =
+            document.getElementById(
+                "result-wpm"
+            );
+
+        const resultAccuracy =
+            document.getElementById(
+                "result-accuracy"
+            );
+
+        const resultErrors =
+            document.getElementById(
+                "result-errors"
+            );
+
+        const resultTime =
+            document.getElementById(
+                "result-time"
+            );
+
+
+        if (resultWpm) {
+
+            resultWpm.textContent =
+                wpm;
+
+        }
+
+
+        if (resultAccuracy) {
+
+            resultAccuracy.textContent =
+                accuracy + "%";
+
+        }
+
+
+        if (resultErrors) {
+
+            resultErrors.textContent =
+                wrongCharacters;
+
+        }
+
+
+        if (resultTime) {
+
+        resultTime.textContent =
+        (selectedTime - timeLeft) + "s";
+
+        }
+
+
+        // ------------------------------------
+        // SHOW RESULT
+        // ------------------------------------
+
+        const resultScreen =
+            document.getElementById(
+                "result-screen"
+            );
+
+
+        if (resultScreen) {
+
+            resultScreen.classList.remove(
+                "hidden"
+            );
+
+        }
+
+    }
+
+
+    // ========================================
+    // TYPING
+    // ========================================
+
+    typingArea.addEventListener(
+        "keydown",
+        (event) => {
+
+
+            // Test finished
+            if (testFinished) {
+
+                return;
+
+            }
+
+
+            // =================================
+            // BACKSPACE
+            // =================================
+
+            if (event.key === "Backspace") {
+
+                event.preventDefault();
+
+
+                if (currentIndex === 0) {
+
+                    return;
+
+                }
+
+
+                // Move backwards
+                currentIndex--;
+
+
+                const characters =
+                    typingText.querySelectorAll(
+                        "span"
+                    );
+
+
+                const previousCharacter =
+                    characters[currentIndex];
+
+
+                // Remove counter
+                if (
+                    previousCharacter.classList.contains(
+                        "text-yellow-400"
+                    )
+                ) {
+
+                    correctCharacters--;
+
+                }
+
+
+                if (
+                    previousCharacter.classList.contains(
+                        "text-red-400"
+                    )
+                ) {
+
+                    wrongCharacters--;
+
+                }
+
+
+                // Reset color
+                previousCharacter.classList.remove(
+                    "text-yellow-400",
+                    "text-red-400"
+                );
+
+
+                previousCharacter.classList.add(
+                    "text-gray-500"
+                );
+
+
+                return;
+
+            }
+
+
+            // =================================
+            // IGNORE SPECIAL KEYS
+            // =================================
+
+            if (event.key.length !== 1) {
+
+                return;
+
+            }
+
+
+            event.preventDefault();
+
+
+            // =================================
+            // START TIMER
+            // =================================
+
+            if (!testStarted) {
+
+                startTimer();
+
+            }
+
+
+            // =================================
+            // CURRENT CHARACTER
+            // =================================
+
+            const characters =
+                typingText.querySelectorAll(
+                    "span"
+                );
+
+
+            const currentCharacter =
+                characters[currentIndex];
+
+
+            if (!currentCharacter) {
+
+                return;
+
+            }
+
+
+            // =================================
+            // CORRECT / WRONG
+            // =================================
+
+            if (
+                event.key ===
+                currentCharacter.textContent
+            ) {
+
+
+                // Correct
+                currentCharacter.classList.remove(
+                    "text-gray-500",
+                    "text-red-400"
+                );
+
+
+                currentCharacter.classList.add(
+                    "text-yellow-400"
+                );
+
+
+                correctCharacters++;
+
+
+            } else {
+
+
+                // Wrong
+                currentCharacter.classList.remove(
+                    "text-gray-500",
+                    "text-yellow-400"
+                );
+
+
+                currentCharacter.classList.add(
+                    "text-red-400"
+                );
+
+
+                wrongCharacters++;
+
+            }
+
+
+            // =================================
+            // MOVE TO NEXT CHARACTER
+            // =================================
+
+            currentIndex++;
+
+
+            // =================================
+            // PARAGRAPH COMPLETE
+            // =================================
+
+            if (
+                currentIndex >=
+                currentParagraph.length
+            ) {
+
+                finishTest();
+
+            }
+
+        }
+    );
+
+
+    // ========================================
+    // RESTART BUTTON
+    // ========================================
+
+    restartButton.addEventListener(
+        "click",
+        () => {
+
+            loadNewParagraph();
+
+        }
+    );
+
+
+    // ========================================
+    // INITIAL TEST
+    // ========================================
+
+    loadNewParagraph();
+
+</script>
+
+</body>
+
+</html>
