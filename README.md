@@ -10,7 +10,7 @@ PandaType allows users to test their typing speed and accuracy through timed typ
 
 ## 📸 Preview
 
-![PandaType Preview](./screenshot.png)
+![PandaType Preview](/assets/sceenshot.png)
 
 ## ✨ Features
 
