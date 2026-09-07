@@ -105,3 +105,9 @@ pandatype/
 │   └── screenshot.png
 │
 └── README.md
+
+👨‍💻 Author
+
+Developed as a modern front-end e-commerce project using HTML5, Tailwind CSS, and Vanilla JavaScript, with a focus on responsive design, interactive user experiences, browser-based state management, and clean front-end architecture.
+
+⭐ If you like this project, consider giving the repository a star!
