@@ -105,6 +105,8 @@ pandatype/
 │   └── screenshot.png
 │
 └── README.md
+```
+
 
 👨‍💻 Author
 
